@@ -9,8 +9,8 @@ const { signToken } = require('../utils/jwt');
 // Cookie options
 const cookieOptions = {
   httpOnly: true,
-  secure:   process.env.NODE_ENV === 'production',
-  sameSite: 'lax',
+  secure:   true, // Required for sameSite: 'none' over HTTPS
+  sameSite: 'none',
   // maxAge removed to make this a session cookie (expires when browser is closed)
 };
 
